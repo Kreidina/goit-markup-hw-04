@@ -7,6 +7,7 @@
   --bgr-button: #f5f4fa;
   --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --primary-gray-color:#AFB1B8;
 }
 body {
   color: var(--primary-text-color);
@@ -97,7 +98,6 @@ Page-header
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.14;
-  /* text-decoration: none; */
   padding: 32px 0;
 }
 .site .link:hover,
@@ -127,22 +127,14 @@ Page-header
   margin-left: auto;
   align-items: center;
 }
-
-/* .mail-link::before {
-  display: inline-block;
-  content: '';
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-
+.contact-link{
+  display: flex;
+  align-items: center;
 }
-.tell-link::before {
-  display: inline-block;
-  content: '';
-  width: 10px;
-  height: 16px;
+.icons-contact{
+ fill: currentColor;
   margin-right: 10px;
-} */
+}
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -216,15 +208,11 @@ Feature
   line-height: 1.14;
   text-transform: uppercase;
 
-  /* outline: 2px solid blue; */
-
   margin-bottom: 10px;
 }
 .feature-list .text {
   color: var(--title-text-color);
   line-height: 1.7;
-
-  /* outline: 2px solid blue; */
 }
 .feature-item {
   flex-basis: calc((100% - 3 * 30px) / 4);
@@ -238,28 +226,11 @@ Feature
   width: 270px;
   display: flex;
   height: 120px;
-  /* outline: 2px solid red; */
   justify-content: center;
   align-items: center;
-  background: #F5F4FA;
+  background: var(--bgr-button);
   border-radius: 4px;
   margin-bottom: 30px;
-}
-.icon-antena{
-  width: 70px;
-  height: 70px;
-}
-.icon-clock {
-  width: 70px;
-  height: 70px;
-}
-.icon-diagram {
-  width: 70px;
-  height: 70px;
-}
-.icon-astronaut {
-  width: 70px;
-  height: 70px;
 }
 /* 
 =====================================
@@ -274,8 +245,6 @@ Feature
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
-
-  /* outline: 2px solid blue; */
 
   margin-bottom: 50px;
 }
@@ -294,9 +263,6 @@ Feature
 .team {
   background-color: var(--bgr-button);
 }
-/* .team {
-  list-style: none;
-} */
 .team .section-title {
   font-weight: 700;
   font-size: 36px;
@@ -310,8 +276,6 @@ Feature
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
-
-  /* outline: 2px solid blue; */
 }
 .team .text {
   color: var(--title-text-color);
@@ -319,8 +283,6 @@ Feature
   line-height: 1.18;
   text-align: center;
   margin-top: 10px;
-
-  /* outline: 2px solid blue; */
 }
 .team-list {
   display: flex;
@@ -345,17 +307,29 @@ Feature
   margin: auto;
   margin-top: 16px;
 }
+.card-item{
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
 .card-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
-  margin-right: 10px;
+  background-color:var(--primary-white-color);
   border-radius: 50%;
-  background-color: tomato;
+  color:  var(--primary-gray-color);
+}
+.card-link:hover,
+.card-link:focus{
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
 }
 .card-icon{
-  width: 20px;
-  height: 20px; 
+fill: currentColor;
 }
 /* 
 ==============================================
@@ -371,16 +345,29 @@ margin-bottom: 50px;
 }
 .clients-list {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
-.client-item{
+.client-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 170px;
   height: 92px;
-  border: 1px solid #AFB1B8;
+  color: var(--primary-gray-color);
+  border: 1px solid var(--primary-gray-color);
   border-radius: 4px;
   padding: 16px 32px;
 }
-.client-item:not(:last-child){
-  margin-right: 30px;
+.client-link:hover,
+.client-link:focus{
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+
+}
+.client-icons{
+  fill: currentColor;
 }
 /* 
 ============================================
@@ -418,6 +405,10 @@ Footer
 }
 .footer-container{
   display: flex;
+  align-items: baseline;
+}
+.contacts-container{
+  margin-right: 70px;
 }
 .join-title{
 font-weight: 700;
@@ -425,6 +416,7 @@ font-size: 14px;
 line-height: 16px;
 text-transform: uppercase;
 color: var(--primary-white-color);
+margin-bottom: 20px;
 }
 .join-list{
   display: flex;
@@ -437,37 +429,21 @@ color: var(--primary-white-color);
   display: inline-block;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: #188ce8;
-}
-.join-icon{
-
-  width: 20px;
-  height: 20px;
-  fill: #fff;
-}
-
-/* .card-list{
-  display: flex;
-  width: 207px;
-  height: 44px;
-  margin: auto;
-  margin-top: 16px;
-}
-.card-link {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
+  padding: 12px;
   margin-right: 10px;
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);;
 }
-.card-icon{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  padding: 12px;
-} */
-/*
+.join-link:not(:last-child){
+  margin-right: 10px;
+}
+.join-icon{
+  fill: var(--primary-white-color);
+}
+.join-link:hover,
+.join-link:focus{
+  background-color: var(--accent-color);
+}
 =============================================
 portfolio
 ==============================================
@@ -478,8 +454,6 @@ portfolio
  ==================================
   */
 .filter {
-  /* list-style: none; */
-
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -505,6 +479,7 @@ portfolio
 .button:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: var(--card-shadow);
 }
 /* 
 =============================================
@@ -517,22 +492,16 @@ work
   letter-spacing: 0.06em;
   font-size: 18px;
   line-height: 2;
-
-  /* outline: 2px solid blue; */
-
   margin-bottom: 4px;
 }
 .work-list .text {
   color: var(--title-text-color);
   font-size: 16px;
   line-height: 1.87;
-
-  /* margin-bottom: 20px; */
-  /* outline: 2px solid blue; */
 }
 .card-content {
   padding: 20px 24px;
-  background: #ffffff;
+  background: var(--primary-white-color);
   border: 1px solid #eeeeee;
 }
 .work-list {
@@ -546,9 +515,11 @@ work
   flex-basis: calc(100% / 3 - 30px);
   margin-right: 30px;
   margin-bottom: 30px;
+}
+.work-item:hover,
+.work-item:focus{
   box-shadow: var(--card-shadow);
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
