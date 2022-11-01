@@ -5,8 +5,7 @@
   --primary-white-color: #ffffff;
   --bgr-blue: #2f303a;
   --bgr-button: #f5f4fa;
-  --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --primary-gray-color:#AFB1B8;
 }
 body {
@@ -148,7 +147,7 @@ Hero
   padding: 200px 0;
 
   max-width: 1600px;
-  min-height: 600px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -302,14 +301,10 @@ Feature
 }
 .card-list{
   display: flex;
-  width: 207px;
-  height: 44px;
-  margin: auto;
+  justify-content: center;
   margin-top: 16px;
 }
 .card-item{
-  display: flex;
-  justify-content: center;
   margin-right: 10px;
 }
 .card-link {
@@ -324,7 +319,6 @@ Feature
 }
 .card-link:hover,
 .card-link:focus{
-  border-radius: 50%;
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
@@ -358,7 +352,6 @@ margin-bottom: 50px;
   color: var(--primary-gray-color);
   border: 1px solid var(--primary-gray-color);
   border-radius: 4px;
-  padding: 16px 32px;
 }
 .client-link:hover,
 .client-link:focus{
@@ -420,9 +413,6 @@ margin-bottom: 20px;
 }
 .join-list{
   display: flex;
-  width: 206px;
-  height: 44px;
-  margin: auto;
 
 }
 .join-link{
@@ -444,6 +434,7 @@ margin-bottom: 20px;
 .join-link:focus{
   background-color: var(--accent-color);
 }
+/*
 =============================================
 portfolio
 ==============================================
@@ -453,6 +444,7 @@ portfolio
   btn
  ==================================
   */
+
 .filter {
   display: flex;
   justify-content: center;
@@ -516,8 +508,11 @@ work
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.work-item:hover,
-.work-item:focus{
+.work-link {
+  display: block;
+}
+.work-link:hover,
+.work-link:focus{
   box-shadow: var(--card-shadow);
 }
 .visually-hidden {
